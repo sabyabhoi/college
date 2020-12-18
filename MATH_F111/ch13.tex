@@ -1,0 +1,182 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+
+\begin{document}
+\title{Vector Valued Functions and Motion in Space}
+\author{Sabyasachi Bhoi}
+\date{Dec 18, 2020}
+\maketitle
+
+\section{Cheat sheet}
+
+\subsection{Path and Velocity}
+\subsubsection{Position Vector}
+\begin{equation*}
+	\vec{r}(t) = f(t)\hat{i} + g(t)\hat{j} + h(t)\hat{k}
+\end{equation*}
+
+\subsubsection{Velocity}
+\begin{equation*}
+	\vec{v}(t) = \frac{d}{dt} \vec{r}(t)
+\end{equation*}
+
+\subsubsection{Definition of a limit for position vector}
+Let $r(t) = f(t)\hat{i} + g(t)\hat{j} + h(t)\hat{k}$ be a vector function with domain $D$, and $L$ a vector. We say that $r$ has a limit $L$ as $t \to t_0$ and write
+\begin{equation*}
+	\lim_{t \to t_0} r(t) = L 
+\end{equation*}
+
+if, for every number $\epsilon > 0$, there exists a corresponding number $\delta > 0$ such that for all $t \in D$,
+\begin{equation*}
+	\left| r(t) - L \right| < \epsilon \quad whenever \quad 0 < \left| t - t_0 \right| < \delta
+\end{equation*}
+
+\subsubsection{Vector functions of constant length}
+If $ \left| r(t) \right| = 0$, then 
+\begin{equation*}
+	r \cdot \frac{dr}{dt} = 0
+\end{equation*}
+
+\subsubsection{Tangent vector}
+
+\begin{equation*}
+	T = \frac{v}{ \left| v \right| }
+\end{equation*}
+
+\subsubsection{Arc Length}
+
+\begin{equation*}
+	s = \int_{a}^{b} \left| v \right| \: dt 
+\end{equation*}
+
+\begin{equation*}
+	\implies \frac{ds}{dt} = \left| v \right|
+\end{equation*}
+
+\subsubsection{Curvature}
+
+\textbf{Definition:} 
+\begin{equation*}
+	\kappa = \left| \frac{dT}{ds} \right|
+\end{equation*}
+
+\begin{align*}
+	\kappa &=  \left| \frac{dT}{ds} \right| = \left| \frac{dT}{ds} \frac{dt}{ds} \right|\quad \textrm{(Chain rule)} \\
+	&=  \frac{1}{ \left| ds/dt \right| } \left| \frac{dT}{dt} \right| \\
+	&=  \frac{1}{ \left| v \right| } \left| \frac{dT}{dt} \right|
+\end{align*}
+
+\begin{equation*}
+	\therefore\; \kappa = \frac{1}{ \left| v \right| } \left| \frac{dT}{dt} \right|
+\end{equation*}
+
+\subsubsection{Radius of Curvature}
+
+\begin{equation*}
+	\rho = \frac{1}{\kappa}
+\end{equation*}
+
+\subsubsection{Normal Vector}
+
+\begin{equation*}
+	N = \frac{1}{\kappa} \frac{dT}{ds}
+\end{equation*}
+
+\begin{equation*}
+	N = \frac{dT/dt}{ \left| dT/dt \right| }
+\end{equation*}
+
+\subsection{Acceleration}
+
+\subsubsection{The TNB Frame}
+
+\begin{equation*}
+	B = T \times N
+\end{equation*}
+Here, $B$ is the \textbf{Binormal Vector} 
+
+\begin{align*}
+	a &= \frac{dv}{dt} = \frac{d}{dt} \left( T \frac{ds}{dt} \right) = \frac{d^2s}{dt^2}T + \frac{ds}{dt}\frac{dT}{dt}\\
+	&=  \frac{d^2s}{dt^2}T + \frac{ds}{dt} \left( \frac{dT}{ds} \frac{ds}{dt} \right) = \frac{d^2s}{dt^2}T + \frac{ds}{dt} \left( kN\frac{ds}{dt} \right) \\
+	a	&=  \frac{d^2s}{dt^2} \textbf{T}  + \kappa \left( \frac{ds}{dt} \right)^2 \textbf{N} 
+\end{align*}
+
+\begin{equation*}
+	\therefore\; a_T = \frac{d^2s}{dt^2} = \frac{d}{dt} \left| v \right|\quad and \quad a_N = \kappa \left( \frac{ds}{dt} \right) ^2 = \kappa \left| v \right| ^2
+\end{equation*}
+
+\subsubsection{Practical way of calculating $a_N$}
+
+\begin{equation*}
+	a_N = \sqrt{ \left| a \right|^2 - a_T^2 }
+\end{equation*}
+
+\subsection{Torsion}
+
+\begin{equation*}
+	\frac{dB}{ds} = \frac{d(T \times N)}{ds} = \frac{dT}{ds} \times N + T \times \frac{dN}{ds}
+\end{equation*}
+Since $N$ is in the direction of $\frac{dT}{ds}$, $\frac{dT}{ds} \times N = 0$.
+
+Since $B$ has constant length, 
+
+\begin{equation*}
+	\frac{dB}{ds} = - \tau N
+\end{equation*}
+Here, $\tau$ is torsion.
+
+\begin{equation*}
+	\tau = -\frac{dB}{ds} \cdot N
+\end{equation*}
+
+\subsubsection{Formulae for computing Curvature and Torsion}
+
+\begin{align*}
+	v \times a &= \left( \frac{ds}{dt} T \right) \times \left[ \frac{d^s}{dt^2}T + \kappa \left( \frac{ds}{dt} \right)^2 N \right] \\
+	&=  \left( \frac{ds}{dt} \frac{d^s}{dt^2} \right) \left( T \times T \right) + \kappa \left( \frac{ds}{dt} \right) ^2 \left( T \times N \right) \\
+	&=  \kappa \left( \frac{ds}{dt} \right)^3 B \\
+	\left| v \times a \right| &=  \kappa \left| \frac{ds}{dt} \right| ^3 \left| B \right| = \kappa \left| v \right|^3
+\end{align*}
+
+Vector Formula for Curvature
+\begin{equation*}
+	\kappa = \frac{ \left| v \times a \right| }{ \left| v \right|^3 }
+\end{equation*}
+
+Formula for Torsion
+
+\begin{equation*}
+	\tau = \frac{ \begin{vmatrix}
+			\dot{x} & \dot{y} & \dot{z} \\
+			\ddot{x} & \ddot{y} & \ddot{z} \\
+			\dddot{x} & \dddot{y} & \dddot{z} \\
+	\end{vmatrix} }{ \left| v \times a \right|^2 } \quad \forall\; v \times a \neq 0
+\end{equation*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

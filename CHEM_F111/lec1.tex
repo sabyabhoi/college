@@ -1,0 +1,250 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+
+\begin{document}
+\title{Quantum Chemistry}
+\author{Sabyasachi Bhoi}
+\date{Dec 14, 2020}
+\maketitle
+
+\section{Vibrational Harmonics}
+
+\subsubsection*{Harmonic Motion:} 
+
+\begin{equation*}
+	F = -kx, \quad \textrm{where $k$ is the force constant}
+\end{equation*}
+
+\subsubsection*{Potential Energy:} 
+\begin{equation*}
+	V = \frac{1}{2} kx^2
+\end{equation*}
+
+\subsubsection*{Schr\"odinger Equation}
+\begin{equation*}
+	- \frac{\hbar^2}{2m} \frac{d^2\Psi}{d x^2} + \frac{1}{2} kx^2\Psi = E\Psi
+\end{equation*}
+
+\subsection{Energy Levels}
+
+\begin{equation*}
+	E_v = \left( v + \frac{1}{2} \right) h\nu
+\end{equation*}
+Here, $\nu = \frac{1}{2\pi} \sqrt{\frac{k}{m}}$ and $v$ is the vibrational quantum number.
+
+\section{Particle in a 2D ring}
+
+\textbf{Convention:}
+\begin{align*}
+	\textrm{Clockwise rotation} \rightarrow m_l < 0\\
+	\textrm{Anti-Clockwise rotation} \rightarrow m_l > 0\\
+\end{align*}
+
+\subsection{Energy level}
+
+\begin{align*}
+	&J_z = \pm \frac{hr}{\lambda}\\
+	&\lambda = \frac{2\pi r}{m_l}\\
+\end{align*}
+
+\begin{equation*}
+	\textrm{Angular Momentum}\; J_z = m_l \hbar 
+\end{equation*}
+
+\begin{equation*}
+	E_{m_l} = \frac{m_l^2\hbar^2}{2mr^2} = \frac{m_l^2\hbar^2}{2I}, \quad \textrm{where, $m_l$ is a quantum number.}  
+\end{equation*}
+
+\section{Rotation in 3D - Rigid Rotor}
+Classically, $E = \frac{J^2}{2mR^2} = \frac{J^2}{2I}$  
+
+\subsection{Hamiltonian for motion in 3D}
+\begin{equation*}
+	\hat{H} = - \frac{\hbar^2}{2m} \nabla^2 + V
+\end{equation*}
+
+Here, $\nabla^2$ is the Laplacian Operator (in spherical co-ordinate), which is defined as:
+
+\begin{equation*}
+	\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^2} \Lambda^2 \quad \textrm{where, $\Lambda^2$ is the Legendrian Operator}
+\end{equation*}
+
+\begin{equation*}
+	\Lambda^2 = \frac{1}{sin^2\theta} \frac{\partial^2}{\partial\phi^2} + \frac{1}{sin\theta} \frac{\partial sin\theta}{\partial \theta} \frac{\partial}{\partial\theta}  
+\end{equation*}
+
+\begin{equation*}
+	- \frac{\hbar^2}{2m} \nabla^2 \Psi(\theta, \phi) = E \Psi(\theta, \phi)
+\end{equation*}
+\section{Rigid rotor wavefunctions}
+$\Psi(\theta, \phi)$ is separated into $\theta$ part and the $\phi$ part, that is, $\varPsi(\theta, \phi) = \Theta(\theta)\Phi(\phi)$.
+
+\subsection{Energy levels for Rigid Rotor}
+\begin{equation*}
+	E_l = l(l + 1) \frac{\hbar^2}{2I} 
+\end{equation*}
+
+\begin{align*}
+	J = \hbar \sqrt{l(l+1)}
+\end{align*}
+
+\section{Energy levels}%
+\label{cha:Energy levels}
+
+\begin{equation*}
+	E_n = \frac{ -hcRZ^2 }{n^2} \quad \textrm{where $R = 109677cm^{-1}$}
+\end{equation*}
+Energy only depends on $n$ and not $l$ or $m_l$.
+
+\begin{equation*}
+	\frac{1 }{\lambda } = R \left( \frac{1 }{n_1^2} - \frac{1 }{n_2^2}  \right)
+\end{equation*}
+
+
+\section{Ground state of Hydrogen Atom}%
+\label{sec:Ground state of Hydrogen Atom}
+
+\begin{equation*}
+	n = 0,\;l = 0,\;m_l = 0 \rightarrow \textrm{1s orbital}
+\end{equation*}
+
+\begin{equation*}
+	\Psi_{n, l, m_l}(r, \theta, \phi) = R_{n, l}(r) \Theta_{l, m_l}(\theta) \Phi_{m_l}(\phi) = R_{n, l}(r) Y_{l, m_l}(\theta, \phi)
+\end{equation*}
+
+\begin{example}
+	\begin{equation*}
+		\Psi_{100} = \left[ \left( \frac{4}{a_0^3} \right)^{1/2} e^{-r/a_0}  \right] \left[ \left( 4\pi \right)^{-1/2} \right]
+	\end{equation*}
+\end{example}
+
+No nodes in this case.
+
+\section{Radial Wavefunctions}%
+\label{sec:Radial Wavefunctions}
+
+\begin{equation*}
+	R_{n, l}(r) \propto r^l \times \textrm{Polynomial of degree $n-l-1$} \times e^{- \frac{Zr }{na_0} }
+\end{equation*}
+
+\begin{itemize}
+	\item The first factor determines the behaviour at r = 0. (only $l = 0$ wavefunctions are non-zero at the origin)
+	\item The second factor determines the number of nodes at $n - l - 1$
+	\item The third ensures that the function goes to 0 as $r \to \infty$
+\end{itemize}
+
+\begin{example}
+	\begin{equation*}
+		\Psi_{2s} \propto \left( 2 - \frac{Zr}{a_0}  \right)\;e^{ -\frac{Zr}{2a_0} }
+	\end{equation*}
+\end{example}
+
+\subsection{Probability Density}%
+\label{sub:Probability Density}
+
+\begin{equation*}
+	\textrm{Volume of spherical shell} = 4 \pi r^2 dr
+\end{equation*}
+
+\begin{align*}
+	\textrm{Probability}\;P(r)dr &= \left| \Psi \right|^2 \times 4\pi r^2 dr\\
+	\implies P(r) &= 4 \pi r^2 \Psi^2\quad \textrm{where, $P(r)$ is the Probability Density} 
+\end{align*}
+
+\section{Electron spin}
+
+\begin{itemize}
+	\item Intrinsic angular momentum, and associated magnetic momentum, characteristic of electron, a property like its mass, charge etc.
+	\item Any spinning body has the ability to generate a magnetic field. 
+	\item First indicated by spectroscopic features: eg. the doublet Na 'D-lines'
+\end{itemize}
+
+This was confirmed by \textbf{Stern-Gerlach Experiment}, from where we concluded that an electron has two spin states: $+\frac{1}{2}$ or $-\frac{1}{2}$.  
+
+Electron described by intrinsic spin angular momentum quantum number $s = \frac{1}{2}$.
+
+\begin{equation*}
+	\textrm{magnitude of angular momentum} = \left[ \frac{1}{2} \left( \frac{1}{2} + 1 \right) \right] \hbar = \left( \frac{\sqrt{3}}{2}  \right) \hbar
+\end{equation*}
+
+The component of electron spin along any axis in space, say the z-axis can take on one of the two values $\frac{\hbar}{2}$ or $-\frac{\hbar}{2}$.
+
+\begin{equation*}
+	m_s = \frac{1}{2} ( \textrm{$\alpha$ state} )\quad or \; -\frac{1}{2} ( \textrm{$\beta$ state} ) 
+\end{equation*}
+
+\textbf{Convention:} 
+\begin{align*}
+	\textrm{clockwise rotation} &\rightarrow + \frac{1}{2} \\
+	\textrm{ant-clockwise rotation} &\rightarrow + -\frac{1}{2} \\
+\end{align*}
+
+\subsection{Spin Orbital}
+one electron wavefunction written as a product of the space part and the spin part.
+
+\begin{equation*}
+	\textrm{Spin Orbital} = \textrm{Spatial orbital} \times \textrm{Spin function} = 1 s \alpha
+\end{equation*}
+
+\begin{itemize}
+	\item All fundamental particles have characteristic spin values.
+	\item Protons and neutrons are also spin $\frac{1}{2}$ particles like electrons.
+	\item Photons are spin 1 particles.
+\end{itemize}
+
+All particles may be classified as \textbf{Bosons} ($s = 0, 1, 2, \dots$) or \textbf{Fermions} ($s = \frac{1}{2}, \frac{3}{2}, \frac{5}{2}, \dots$) 
+
+\subsection{Spectral Transition}
+
+In the one electron atom, spectral line occurs when an electron makes a transition between shells with principal quantum number $n_i$ and $n_f$. However, not all transitions between all available orbitals are possible or 'allowed'.\\
+
+\textbf{Example:}  
+\begin{itemize}
+	\item 2p to 1s, and 3p to 1s are \textit{allowed} transitions.
+	\item 2s to 1s or 3d to 1s are \textit{forbidden} transitions.
+\end{itemize}
+
+A statement about which spectroscopic transitions are allowed is called the \textit{selection rule} .
+
+\subsection{Selection rule for one electron atom}
+
+the selection rule here is just the conservation of angular momentum.
+
+\textbf{Transitions:} Change in angular momentum of the electron must compensate for the angular momentum carried away by the photon. 
+
+\begin{align*}
+	\Delta l &=  0, \pm 1 \\
+	\Delta m_l &=  0, \pm 1 \\
+\end{align*}
+
+\section{Multi-Electron Atoms}
+
+\textbf{Orbital Approximation:} Approximate the wavefunction as a product of one electron functions or orbitals.
+
+\begin{equation*}
+	\Psi(1, 2, \dots) = \Psi_1(1)\Psi_2(2) \dots
+\end{equation*}
+Each orbital may be thought of as being hydrogen like with an effective nuclear charge.
+
+\begin{example} Helium Atom (2 electrons)
+	\begin{equation*}
+		\hat{H} = - \frac{\hbar^2}{2m} \nabla^2_1 - \frac{Ze^2}{4 \pi \varepsilon_0r_1} - \frac{\hbar^2}{2m}\nabla^2_2 - \frac{Ze^2}{4\pi\varepsilon_0 r_2} + \frac{e^2}{4\pi\varepsilon_0 r_{12}} 
+	\end{equation*}
+
+	\begin{equation*}
+		\hat{H} \approx - \frac{\hbar^2}{2m} \nabla^2_1 - \frac{Z}{4\pi\varepsilon_0 r_1} - \frac{\hbar^2}{2m}\nabla^2_2 - \frac{Z}{4\pi\varepsilon_0 r_2} = \hat{H_1} + \hat{H_2}
+	\end{equation*}
+
+\end{example}
+
+
+\end{document}
+
+
+

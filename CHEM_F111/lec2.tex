@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{modiagram}
+\usepackage{chemfig}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+
+\begin{document}
+\title{Atomic Bonding}
+\author{Sabyasachi Bhoi}
+\date{Dec 15, 2020}
+\maketitle
+
+\section{VB Theory: For Polyatomic molecules}
+
+\subsection{Two modifications}
+\begin{itemize}
+	\item Promotion of electron
+	\item Hybridization
+\end{itemize}
+
+\subsection{Hybridized Orbitals}
+Consider $n$ atomic orbitals with wave functions $\varphi_1 \dots \varphi_n$ mix up.
+
+\begin{align*}
+	\Psi_1 &= \varphi_{2s} + \varphi_{2p_x} + \varphi_{2p_y} + \varphi_{2p_z} \\
+	\Psi_2 &= \varphi_{2s} + \varphi_{2p_x} - \varphi_{2p_y} - \varphi_{2p_z} \\
+	\Psi_3 &= \varphi_{2s} - \varphi_{2p_x} - \varphi_{2p_y} + \varphi_{2p_z} \\
+	\Psi_4 &= \varphi_{2s} - \varphi_{2p_x} + \varphi_{2p_y} - \varphi_{2p_z} \\
+\end{align*}
+
+Electron in each of these $sp^3$ hybrid orbitals pairs up with electrons in H $1s$ orbital forming 4 identical $\sigma$ bonds.
+
+\section{Superposition of wavefunctions}
+
+\begin{equation*}
+	\int{{\Psi_1 \Psi_2}}\: d{\tau} = 0
+\end{equation*}
+
+\begin{align*}
+	\Psi_1 &= \varphi_{2s} + \varphi_{2p_z} \\
+	\Psi_1 &= \varphi_{2s} - \varphi_{2p_z} \\
+\end{align*}
+
+\begin{equation*}
+	\int{{\Psi_1 \Psi_2}}\: d{\tau} = \int {\varphi_{2s}^2p} \: d{\tau} - \int{\varphi_{2p_z}^2} \: d{\tau}
+\end{equation*}
+
+\section{Molecular Orbital Theory}
+Here, electrons do not belong to particular bonds, but spread \textbf{throughout} the entire molecule.
+
+The wavefunction of hydrogen atom A and hydrogen atom B can interact either constructively or destructively.
+
+\begin{equation*}
+	\Psi_{\pm} = N(A \pm B)
+\end{equation*}
+
+Assume that molecular orbitals are linear combinations of atomic orbitals:
+\begin{equation*}
+	\Psi = \sum^{n}_{i=1} C_i\varphi_i \quad \textrm{where, $C_i$ is the mixing coefficient}
+\end{equation*}
+
+\begin{equation*}
+	\hat{H_e} = \check{T_e} - \frac{e^2 }{4 \pi \epsilon_0 r_a} - \frac{e^2}{4 \pi \epsilon_0 r_b} + \frac{e^2}{4 \pi \epsilon_0 R} 
+\end{equation*}
+
+\begin{equation*}
+	\Psi_1 = N_1(\varphi_a + \varphi_b)
+	\Psi_2 = N_1(\varphi_a - \varphi_b)
+\end{equation*}
+
+\subsection{Molecular Orbital wave function($H_2^+$ molecule)}
+
+Constructive interference:
+\begin{equation*}
+	\Psi_\sigma\;or\; \Psi_+ = \frac{1}{\sqrt{2}} 
+\end{equation*}
+
+\begin{equation*}
+	\Psi_+^2 = N^2 \left( A^2 + B^2 + 2AB \right)
+\end{equation*}
+
+\begin{itemize}
+	\item Predicts an equilibrium bond length of 130 pm and bond dissociation energy of $171 kJ/mole$
+	\item Experimental values are 106 pm and $250 kJ/mole$
+	\item Reasonable agreement given crude nature of description
+\end{itemize}
+
+\subsection{Antibonding Molecular Orbital}
+
+Energy decreases monotonically as a function of the inter-nuclear separation with no minimum
+
+\begin{equation*}
+	\Psi_-^2 = N^2 \left( A^2 + B^2 - 2AB \right)
+\end{equation*}
+
+\begin{equation*}
+	- \frac{\hbar^2}{2m} \frac{\partial^2\Psi}{\partial x^2} = E\Psi
+\end{equation*}
+
+\subsection{Energy levels in Molecular orbitals for $H_2^+$ molecule}
+
+Number of nodal planes = $0 (\sigma), \; 1(\pi)$
+
+\end{document}
