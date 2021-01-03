@@ -24,17 +24,164 @@
 to each element in $D$. The set $D$ is the function's domain. The set of w-values taken on by $f$ is the function's range. 
 \end{defn}
 
+\begin{example}
+	\begin{equation*}
+		f(x, y) = \frac{sin xy}{x^2 + y^2 - 25}
+	\end{equation*}
+	Here, The domain is $D = \left\{ (x, y) \in \mathbb{R}^2 | x^2 + y^2 \neq 25 \right\}$.
+\end{example}
+
+\begin{example}
+	\begin{equation*}
+		f(x, y) = \sqrt{y - x^2}
+	\end{equation*}
+	Here, the domain is $D = \left\{ (x, y) \in \mathbb{R}^2 | y \geq x^2  \right\} $
+\end{example}
+
 \begin{defn}
-	A point $(x_0, y_0)$ in a region R in the xy-plane is an interior point of R if it is the center of a disk of positive radius that lies entirely in $R$. A point $(x_0, y_0)$ is a boundary point of $R$ if every disk centered at $(x_0, y_0)$ contains points that lie outside of $R$ as well as points that lie in $R$.
+	\textbf{Interior Point:} $(x_0, y_0) \in R$ is called an interior point if $\exists$ a disc centered at $(x_0, y_0)$ and contained in $R$ 
+\end{defn}
+
+\begin{example}
+	$R = \left\{ (x, y) \mid x^2 + y^2 < 1 \right\}$. Here, $(0, 1)$ is \textbf{not} an interior point, because we cannot draw a disc of any radius greater than 0 which would be contained in this region.
+\end{example}
+
+\begin{defn}
+	\textbf{Boundary Point:} $(x_0, y_0) \in \mathbb{R}$ if every disc centered at $(x_0, y_0)$ contains points inside and outside of $R$
+\end{defn}
+
+\begin{example}
+	$R = \left\{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 < 1 \right\}$. Here, boundary points of $R = \left\{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1 \right\}$
+\end{example}
+
+\begin{defn}
+	\textbf{Open Set:} $R$ is called an open set if each point of $R$ is an interior point.
 \end{defn}
 
 \begin{defn}
-	A region in the plane is \textbf{bounded} if it lies inside a disk of finite radius. A region is \textbf{unbounded} if it is not bounded. 
+	\textbf{Closed Set:} $R$ is called a closed set if it contains all of its boundary points.
 \end{defn}
 
 \begin{defn}
-	The set of points in the plane where a function $f(x, y)$ has a constant value $f(x, y) = c$ is called the \textbf{level curve} of $f$. The set of all points $(x, y, f(x, y))$ in space, for $(x, y)$ in the domain of $f$, is called the \textbf{graph} of $f$. The graph of $f$ is also called the \textbf{surface} $z = f(x, y)$.  
+	\textbf{Level curve:} The set of points in the plane where a function $f(x, y)$ has a constant value $c$.
 \end{defn}
+
+\begin{example}
+	\begin{equation*}
+		f(x, y) = x + y - 1
+	\end{equation*} 
+	Level curve for $c = -1$ is 
+
+	\begin{align*}
+		&\left\{ (x_0, y_0) \in \mathbb{R}^2 \mid x_0 + y_0 -1 = -1 \right\}\\
+		= & \left\{ (x_0, y_0) \in \mathbb{R}^2 \mid x_0 + y_0 = 0 \right\}
+	\end{align*}
+\end{example}
+
+\begin{example}
+	\begin{equation*}
+		f(x, y) = x^2 + y^2
+	\end{equation*}
+	Level curve for $c = 0$:
+	\begin{align*}
+		&x^2 + y^2 = 0 \\
+		\implies &x = y = 0
+	\end{align*}
+
+	Level curve for $c = 1$:
+	\begin{equation*}
+		x^2 + y^2 = 1
+	\end{equation*}
+\end{example}
+
+\begin{defn}
+	\textbf{Level Surface:} The set of points in space where the function $f(x, y, z)$ has a constant value $c$.
+\end{defn}
+
+\begin{example}
+	\begin{equation*}
+		f(x, y, z) = x^2 + y^2 + z^2
+	\end{equation*}
+
+	Level surface for $c = 1$:
+	\begin{equation*}
+		x^2 + y^2 + z^2 = 1 \quad (sphere)
+	\end{equation*}
+\end{example}
+
+\section{Limit of a multivariable function}
+
+\subsection{limit in one dimension}
+\begin{defn}
+	\begin{equation*}
+		\lim_{x \to x_0} f(x) = L 
+	\end{equation*}
+	$\forall\;\varepsilon > 0$, $\exists\;\delta > 0$ such that
+	\begin{equation*}
+		\left| f(x) - L  \right| < \varepsilon \quad whenever \quad 0 < \left| x - x_0 \right| < \delta
+	\end{equation*}
+\end{defn}
+
+\begin{example}
+	\begin{equation*}
+		\lim_{x \to 2} 5x-4 = 6
+	\end{equation*}
+
+	\textbf{Proof:} 
+	\begin{equation*}
+		\left| f(x) - L \right| < \varepsilon
+	\end{equation*}
+
+	\begin{equation*}
+		L = 6 \quad x_0 = 2
+	\end{equation*}
+
+	\begin{align*}
+		\left| 5x - 4 - 6 \right| &= \left| 5x -10 \right| \\
+		&= 5 \left| x -2 \right| < \varepsilon
+	\end{align*}
+
+	Take $\delta = \varepsilon/5$
+
+\end{example}
+
+\subsection{limit in 2 dimensions}
+
+\begin{defn}
+	\begin{equation*}
+		\lim_{(x, y) \to (x_0, y_0)} f(x, y) = L
+	\end{equation*}
+
+	If $\forall\;\varepsilon > 0$, $\exists\;\delta > 0$ such that
+	\begin{equation*}
+		\left| f(x, y) - L \right| < \varepsilon \quad whenever \quad 0 < \sqrt{(x - x_0)^2 + (y - y_0)^2} < \delta
+	\end{equation*}
+\end{defn}
+
+\subsection{Properties of limits in 2D}
+
+let $ \lim_{(x, y) \to (x_0, y_0)} f(x, y) = L$, $ \lim_{(x, y) \to (x_0, y_0)} g(x, y) = M$. Then
+
+\begin{enumerate}
+	\item $ \lim_{(x, y) \to (x_0, y_0)}  (f \pm g) = L \pm M$
+	\item $ \lim_{(x, y) \to (x_0, y_0)}  (f \cdot g) = L \cdot M$
+	\item If $M\neq0$, $ \lim_{(x, y) \to (x_0, y_0)}  \left( \frac{f}{g} \right) = \frac{L}{M}$
+	\item $ \lim_{(x, y) \to (x_0, y_0)} f^n = L^n$
+\end{enumerate}
+
+\begin{example}
+	\begin{equation*}
+		\lim_{(x, y) \to (0, 0)} \frac{4xy^2}{x^2 + y^2}
+	\end{equation*}
+
+	To find this limit, we approach the point $(0, 0)$ through $y = mx$. 
+	\begin{align*}
+		&y = mx \\
+		&= \lim_{x \to 0} \frac{4x \left( mx \right)^2}{x^2 + m^2x^2} \\ 
+		&= \lim_{x \to 0}\;x \left( \frac{4m^2}{1 + m^2} \right) = 0
+	\end{align*}
+
+\end{example}
 
 \end{document}
 

@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+
+\pdfpkresolution=300
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
+\begin{document}
+\title{Central Force Motion}
+\author{Sabyasachi Bhoi}
+\date{ Dec 30, 2020 }
+\maketitle
+
+\textbf{Assumption:} All particles are rigid bodies.
+
+\section{Degrees of Freedom}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		No. of Particles & DoF & Constraints & Independent DoF \\
+		\hline
+		1 & 3 & 0 & 3 \\
+		\hline
+		2 & 6 & 1 & 5 \\
+		\hline
+		3 & 9 & 3 & 6 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+Therefore, for $N$ particles, the Independent Degree of Freedom is defined as:
+\[
+	3N - \frac{N(N-1)}{2}
+\]
+
+\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline 
+		No. of Particles & Independent DoF \\
+		\hline 
+		4 & 6 \\
+		\hline 
+		5 & 5 \\
+		\hline 
+		6 & 3 \\
+		\hline 
+		7 & 0 \\
+		\hline 
+		8 & -4 \\
+		\hline 
+	\end{tabular}
+\end{center}
+
+Here, the Independent Degree of Freedom for 8 particle system doesn't make sense. The extra values constraints are considered \textit{redundant} constraints. 
+
+\begin{itemize}
+	\item If the number of constraints is equal to the degrees of freedom, then the system is stationary.
+	\item If the number of constraints is greater than the degrees of freedom, then the system is unstable and would dissociate. 
+\end{itemize}
+
+\section{Translational invariance, Rotational invariance and Constants of motion}
+
+\begin{align*}
+	\vec{F} &=  -\frac{G m_1 m_2}{ \abs{\va{r}_1 - \va{r}_2}^3 } \va{r} \\
+	U \qty(\va{r}_1, \va{r}_2) &=  - \frac{G m_1 m_2}{\abs{\va{r}_1 - \va{r}_2}}
+\end{align*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

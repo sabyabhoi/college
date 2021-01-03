@@ -7,6 +7,9 @@
 \theoremstyle{definition}
 \newtheorem*{example}{Example}
 
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
 \begin{document}
 \title{Quantum Chemistry}
 \author{Sabyasachi Bhoi}
@@ -17,25 +20,25 @@
 
 \subsubsection*{Harmonic Motion:} 
 
-\begin{equation*}
+\[
 	F = -kx, \quad \textrm{where $k$ is the force constant}
-\end{equation*}
+\]
 
 \subsubsection*{Potential Energy:} 
-\begin{equation*}
+\[
 	V = \frac{1}{2} kx^2
-\end{equation*}
+\]
 
 \subsubsection*{Schr\"odinger Equation}
-\begin{equation*}
+\[
 	- \frac{\hbar^2}{2m} \frac{d^2\Psi}{d x^2} + \frac{1}{2} kx^2\Psi = E\Psi
-\end{equation*}
+\]
 
 \subsection{Energy Levels}
 
-\begin{equation*}
+\[
 	E_v = \left( v + \frac{1}{2} \right) h\nu
-\end{equation*}
+\]
 Here, $\nu = \frac{1}{2\pi} \sqrt{\frac{k}{m}}$ and $v$ is the vibrational quantum number.
 
 \section{Particle in a 2D ring}
@@ -53,42 +56,42 @@ Here, $\nu = \frac{1}{2\pi} \sqrt{\frac{k}{m}}$ and $v$ is the vibrational quant
 	&\lambda = \frac{2\pi r}{m_l}\\
 \end{align*}
 
-\begin{equation*}
+\[
 	\textrm{Angular Momentum}\; J_z = m_l \hbar 
-\end{equation*}
+\]
 
-\begin{equation*}
+\[
 	E_{m_l} = \frac{m_l^2\hbar^2}{2mr^2} = \frac{m_l^2\hbar^2}{2I}, \quad \textrm{where, $m_l$ is a quantum number.}  
-\end{equation*}
+\]
 
 \section{Rotation in 3D - Rigid Rotor}
 Classically, $E = \frac{J^2}{2mR^2} = \frac{J^2}{2I}$  
 
 \subsection{Hamiltonian for motion in 3D}
-\begin{equation*}
+\[
 	\hat{H} = - \frac{\hbar^2}{2m} \nabla^2 + V
-\end{equation*}
+\]
 
 Here, $\nabla^2$ is the Laplacian Operator (in spherical co-ordinate), which is defined as:
 
-\begin{equation*}
+\[
 	\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^2} \Lambda^2 \quad \textrm{where, $\Lambda^2$ is the Legendrian Operator}
-\end{equation*}
+\]
 
-\begin{equation*}
+\[
 	\Lambda^2 = \frac{1}{sin^2\theta} \frac{\partial^2}{\partial\phi^2} + \frac{1}{sin\theta} \frac{\partial sin\theta}{\partial \theta} \frac{\partial}{\partial\theta}  
-\end{equation*}
+\]
 
-\begin{equation*}
+\[
 	- \frac{\hbar^2}{2m} \nabla^2 \Psi(\theta, \phi) = E \Psi(\theta, \phi)
-\end{equation*}
+\]
 \section{Rigid rotor wavefunctions}
 $\Psi(\theta, \phi)$ is separated into $\theta$ part and the $\phi$ part, that is, $\varPsi(\theta, \phi) = \Theta(\theta)\Phi(\phi)$.
 
 \subsection{Energy levels for Rigid Rotor}
-\begin{equation*}
+\[
 	E_l = l(l + 1) \frac{\hbar^2}{2I} 
-\end{equation*}
+\]
 
 \begin{align*}
 	J = \hbar \sqrt{l(l+1)}
@@ -97,31 +100,31 @@ $\Psi(\theta, \phi)$ is separated into $\theta$ part and the $\phi$ part, that i
 \section{Energy levels}%
 \label{cha:Energy levels}
 
-\begin{equation*}
+\[
 	E_n = \frac{ -hcRZ^2 }{n^2} \quad \textrm{where $R = 109677cm^{-1}$}
-\end{equation*}
+\]
 Energy only depends on $n$ and not $l$ or $m_l$.
 
-\begin{equation*}
+\[
 	\frac{1 }{\lambda } = R \left( \frac{1 }{n_1^2} - \frac{1 }{n_2^2}  \right)
-\end{equation*}
+\]
 
 
 \section{Ground state of Hydrogen Atom}%
 \label{sec:Ground state of Hydrogen Atom}
 
-\begin{equation*}
+\[
 	n = 0,\;l = 0,\;m_l = 0 \rightarrow \textrm{1s orbital}
-\end{equation*}
+\]
 
-\begin{equation*}
+\[
 	\Psi_{n, l, m_l}(r, \theta, \phi) = R_{n, l}(r) \Theta_{l, m_l}(\theta) \Phi_{m_l}(\phi) = R_{n, l}(r) Y_{l, m_l}(\theta, \phi)
-\end{equation*}
+\]
 
 \begin{example}
-	\begin{equation*}
+	\[
 		\Psi_{100} = \left[ \left( \frac{4}{a_0^3} \right)^{1/2} e^{-r/a_0}  \right] \left[ \left( 4\pi \right)^{-1/2} \right]
-	\end{equation*}
+	\]
 \end{example}
 
 No nodes in this case.
@@ -129,9 +132,9 @@ No nodes in this case.
 \section{Radial Wavefunctions}%
 \label{sec:Radial Wavefunctions}
 
-\begin{equation*}
+\[
 	R_{n, l}(r) \propto r^l \times \textrm{Polynomial of degree $n-l-1$} \times e^{- \frac{Zr }{na_0} }
-\end{equation*}
+\]
 
 \begin{itemize}
 	\item The first factor determines the behaviour at r = 0. (only $l = 0$ wavefunctions are non-zero at the origin)
@@ -140,17 +143,17 @@ No nodes in this case.
 \end{itemize}
 
 \begin{example}
-	\begin{equation*}
+	\[
 		\Psi_{2s} \propto \left( 2 - \frac{Zr}{a_0}  \right)\;e^{ -\frac{Zr}{2a_0} }
-	\end{equation*}
+	\]
 \end{example}
 
 \subsection{Probability Density}%
 \label{sub:Probability Density}
 
-\begin{equation*}
+\[
 	\textrm{Volume of spherical shell} = 4 \pi r^2 dr
-\end{equation*}
+\]
 
 \begin{align*}
 	\textrm{Probability}\;P(r)dr &= \left| \Psi \right|^2 \times 4\pi r^2 dr\\
@@ -169,15 +172,15 @@ This was confirmed by \textbf{Stern-Gerlach Experiment}, from where we concluded
 
 Electron described by intrinsic spin angular momentum quantum number $s = \frac{1}{2}$.
 
-\begin{equation*}
+\[
 	\textrm{magnitude of angular momentum} = \left[ \frac{1}{2} \left( \frac{1}{2} + 1 \right) \right] \hbar = \left( \frac{\sqrt{3}}{2}  \right) \hbar
-\end{equation*}
+\]
 
 The component of electron spin along any axis in space, say the z-axis can take on one of the two values $\frac{\hbar}{2}$ or $-\frac{\hbar}{2}$.
 
-\begin{equation*}
+\[
 	m_s = \frac{1}{2} ( \textrm{$\alpha$ state} )\quad or \; -\frac{1}{2} ( \textrm{$\beta$ state} ) 
-\end{equation*}
+\]
 
 \textbf{Convention:} 
 \begin{align*}
@@ -188,9 +191,9 @@ The component of electron spin along any axis in space, say the z-axis can take 
 \subsection{Spin Orbital}
 one electron wavefunction written as a product of the space part and the spin part.
 
-\begin{equation*}
+\[
 	\textrm{Spin Orbital} = \textrm{Spatial orbital} \times \textrm{Spin function} = 1 s \alpha
-\end{equation*}
+\]
 
 \begin{itemize}
 	\item All fundamental particles have characteristic spin values.
@@ -227,24 +230,108 @@ the selection rule here is just the conservation of angular momentum.
 
 \textbf{Orbital Approximation:} Approximate the wavefunction as a product of one electron functions or orbitals.
 
-\begin{equation*}
+\[
 	\Psi(1, 2, \dots) = \Psi_1(1)\Psi_2(2) \dots
-\end{equation*}
+\]
 Each orbital may be thought of as being hydrogen like with an effective nuclear charge.
 
 \begin{example} Helium Atom (2 electrons)
-	\begin{equation*}
+	\[
 		\hat{H} = - \frac{\hbar^2}{2m} \nabla^2_1 - \frac{Ze^2}{4 \pi \varepsilon_0r_1} - \frac{\hbar^2}{2m}\nabla^2_2 - \frac{Ze^2}{4\pi\varepsilon_0 r_2} + \frac{e^2}{4\pi\varepsilon_0 r_{12}} 
-	\end{equation*}
-
-	\begin{equation*}
+	\]
+	\[
 		\hat{H} \approx - \frac{\hbar^2}{2m} \nabla^2_1 - \frac{Z}{4\pi\varepsilon_0 r_1} - \frac{\hbar^2}{2m}\nabla^2_2 - \frac{Z}{4\pi\varepsilon_0 r_2} = \hat{H_1} + \hat{H_2}
-	\end{equation*}
+	\]
 
 \end{example}
 
+\subsection{The Pauli Principle}
+
+\subsubsection{Pauli Exclusion Principle}
+\begin{defn}
+	No more than two electrons may occupy any given orbital, and if two do occupy one orbital, then their spins must be paired.
+\end{defn}
+
+\subsubsection{The Pauli Principle}
+\begin{defn}
+	When the labels of any two identical fermions are exchanged, the total wavefunction changes sign; when the labels of any two identical bosons are exchanged, the total wavefunction retains the same sign.
+\end{defn}
+
+Therefore, in case of \textit{fermions}, 
+\[
+	\Psi(2, 1) = -\Psi(1, 2)
+\]
+
+But practically speaking, we make the following approximation:
+\[
+	\Psi(1, 2) = \Psi(1) \Psi(2)
+\]
+
+This approximation would fail by Pauli's Principle. Therefore, we add a spin part to this to make it of the form
+\[
+	\Psi(1, 2) = \Psi(1) \Psi(2) \left\{ \textrm{Spin Part} \right\}
+\]
+
+Possibility of spin configurations:
+\begin{enumerate}
+	\item \textbf{both up-spin:} $\alpha(1)\alpha(2)$
+	\item \textbf{both down-spin:} $\beta(1)\beta(2)$
+	\item \textbf{first up-spin and second down-spin:} $\alpha(1)\beta(2)$
+	\item \textbf{first down-spin and second up-spin:} $\beta(1)\alpha(2)$
+\end{enumerate}
+
+\subsubsection{Form of antisymmetric wavefunction}
+
+Possible spin wavefunctions:
+\begin{align}
+	& \alpha(1)\alpha(2) \\
+	& \beta(1)\beta(2) \\
+	& \alpha(1)\beta(2) \\
+	& \beta(1)\alpha(2)
+\end{align}
+
+Since all of them are equally likely, we don't randomly select a single wavefunction; instead we take a linear combination of the two.
+\begin{align*}
+	\sigma_+(1, 2) &=  2^{-1/2} \Psi(1)\Psi(2) \left\{ \alpha(1)\beta(2) + \beta(1)\alpha(2) \right\} \\
+	\sigma_-(1, 2) &=  2^{-1/2} \Psi(1)\Psi(2) \left\{ \alpha(1)\beta(2) - \beta(1)\alpha(2) \right\}
+\end{align*}
+
+We can observe that the second equation is anti-symmetric, since 
+\[
+	\sigma_-(1, 2) = - \sigma_-(2, 1)
+\]
+
+From these calculations, we can get 4 different wavefunctions:
+\begin{align*}
+	&\Psi(1)\Psi(2)\alpha(1)\alpha(2) \\
+	&\Psi(1)\Psi(2)\beta(1)\beta(2) \\
+	&\Psi(1)\Psi(2) \sigma_+(1, 2) \\
+	&\Psi(1)\Psi(2) \sigma_-(1, 2)
+\end{align*}
+
+\subsection{Anti-symmetry in the systems with upaired electrons}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

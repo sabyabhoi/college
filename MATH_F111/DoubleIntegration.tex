@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+\pdfpkresolution=300
+
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
+\begin{document}
+\title{Double Integration}
+\author{Sabyasachi Bhoi}
+\date{ Dec 30, 2020 }
+\maketitle
+
+\section{Introduction}
+
+\subsection{Single Integral}
+
+\[
+	\int_{a }^{b} {f(x)} \: d{x} 
+\]
+
+\[
+	P = \left\{ x_0 = a, x_1, x_2, \dots x_k, x_{k+1}, \dots x_n = b \right\}
+\]
+$P$ is called a partition of the interval $ \left[ a, b \right]$
+
+\subsubsection{Reimann Sum}
+\[
+	S_n = \sum^{n-1}_{k = 1} f(C_k) \Delta x_k, \quad \textrm{where}\; C_k \in \left[ x_k, x_{k+1} \right] 
+\]
+
+If $ \lim_{n \to \infty} S_n $ exists, then we say that 
+\[
+	\lim_{n \to \infty} S_n = \int_{a}^{b} {f(x)} \: d{x} 
+\]
+
+When $n \to \infty$, $\norm{P}$ is defined as the norm of partition.
+
+\[
+	\norm{P} = \max_{0 \leq i \leq n} \Delta x_k
+\]
+
+\section{Double Integration}
+
+$f(x, y)$ defined over a rectangle $R$ where the $ a \leq x \leq b$, $c \leq y \leq d$. Then the double integration of this function in the given range will give the volume contained by the function.
+
+Consider a small rectangle of length $\Delta x_k$ and width $\Delta y_k$.
+\[
+	\textrm{The area confined by this rectangle} =  \Delta A_k = \Delta x_k \times \Delta y_k
+\]
+
+Let $\left( c_k, d_K \right)$ be a point in the smaller rectangle.
+
+\[
+	S_n = \sum^{n-1}_{k = 0} f(c_k, d_k) \Delta A_k
+\]
+If $ \lim_{n \to \infty} S_n$ exists, then we say 
+
+\[
+	\lim_{n \to \infty} S_n = \iint\limits_R f(x, y) \,dA
+\]
+
+\subsection{Fubini's Theorem (first form)}
+If $f(x, y)$ is continuous on $R$, where $R: a \leq x \leq b$ and $c \leq y \leq d$, then
+\[
+	\int_a^b \int_c^d f(x, y) \,dy\,dx = \int_c^d \int_a^b f(x, y) \,dx\,dy 
+\]
+
+\begin{example}
+	Find $c$ such that 
+	\[
+		\int_0^1 \int_0^c \qty(2x + y) \, dx \, dy = 3
+	\]
+
+	\begin{align*}
+		&\int_0^1 \qty[x^2 + xy]_0^c \, dy = \int_0^1 \qty[c^2 + cy] \, dy \\
+		\implies & c^2 + \frac{c}{2} = 3 \\
+		\implies & 2c^2 + c - 6 = 0 \\
+		\implies & c = \frac{3}{2}, \; 2
+	\end{align*}
+\end{example}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

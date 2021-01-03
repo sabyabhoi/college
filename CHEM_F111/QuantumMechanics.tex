@@ -1,0 +1,311 @@
+\documentclass[12pt]{extarticle}
+
+\usepackage[margin=2cm,top=2cm,left=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{chemfig}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\pdfpkresolution=300
+
+\begin{document}
+
+\title{Quantum Mechanics}
+\author{Sabyasachi Bhoi}
+\date{Dec 11, 2020}
+\maketitle
+
+\section{Black body radiation}
+\subsection{Stefan Boltzmann Law}
+\begin{equation}
+	M = \sigma T^4
+\end{equation}
+where $M$ is the \textbf{Emittance} (total power emitted), $\sigma = 5.67\times 10^{-8} Wm^{-2}K^{-4}$.
+
+\subsection{Wien's Law}
+\begin{equation}
+	\lambda_{max} T = 2.898\;mm K
+\end{equation}
+
+\subsection{Rayleigh Jeans Law}
+\begin{equation}
+	\rho(\lambda, T)d\lambda = \frac{8\pi k T}{\lambda^4} d\lambda 
+\end{equation}
+Here $\rho(\lambda)$ is the energy density.
+
+\subsection{Modification to Rayleigh Jeans Law (given by Max Planck)}
+\begin{equation}
+	\rho(\lambda) d\lambda = \frac{8 \pi h c}{\lambda^5 (e^{ \frac{hc}{\lambda kT} - 1})} d\lambda
+\end{equation}
+
+Integrating this gives Stefan Boltzmann law and differentiating this gives the Wien's Displacement law. For large values of $\lambda$, we can use the old Rayleigh Jeans Law.
+
+\section{Wave Particle Duality}
+
+\subsection{Photoelectric Effect}
+\begin{equation}
+	K = h\nu - \phi 
+\end{equation}
+
+\subsection{De Broglie Wavelength}
+\begin{equation}
+	\lambda = \frac{h}{p} 
+\end{equation}
+
+\subsection{Heisenberg's Uncertainty Principle}
+\begin{equation}
+	\Delta x \Delta p_x \geq \frac{\hbar}{2} 
+\end{equation}
+Here, $\hbar = \frac{h}{2\pi} = 1.0545 \times 10^{-34} Js$
+
+\subsection{Born Interpretation}
+Probability that a particle is located in the infinitesimal element of volume $dV$ about a given time $t$:
+\begin{equation}
+	\left| \Psi \right|^2 dV
+\end{equation}
+
+\section{Analysis of Wavefunction}
+Probability Density = $ \left| \Psi \right| ^2$
+
+\begin{equation} \label{eq:norm}
+	\int_{{-\infty}}^{{\infty}} { \left| \Psi \right|^2 } \: d{V} = 1
+\end{equation}
+
+\subsection{Schr\"odinger's Equation}
+\begin{equation}
+	\hat{H} \Psi = E\Psi
+\end{equation}
+
+Here $\hat{H}$ is the Hamiltonian Operator.
+\begin{equation}
+	\frac{-\hbar^2}{2m} \frac{d^2 \Psi}{dx^2} + V(x)\Psi = E\Psi
+\end{equation}
+
+\subsection{Eigen functions, operators}
+\[
+	(operator)(function) = (eigenvalue)(function)
+\]
+\textbf{Example:} 
+\[
+	\frac{d}{dx} \left( e^{ax} \right) = a \left( e^{ax} \right)
+\]
+Here, eigen function is $e^{ax}$ and the eigenvalue is $a$. \\
+\textit{\textbf{Note:} Eigen value must be a real number} 
+
+\section{Particle in 1 Dimensional Box}
+\begin{equation}
+	- \frac{\hbar^2}{2m} \frac{d^2\Psi(x)}{dx^2} = E \Psi(x) 
+\end{equation}
+Here, since the particle is free to move, $V(x) = 0$. \\
+
+The general equation for this differential equation comes out to be: 
+\begin{equation}
+	\Psi(x) = A sin \left( \frac{2 \pi}{\lambda} x \right) + B cos \left(\frac{2 \pi}{\lambda} x \right)
+\end{equation}
+here, $\lambda = \frac{h}{(2mE)^{1/2}}$
+
+Applying boundary conditions: $\Psi(0) = 0$ and $\Psi(L) = 0$, \\
+Since cosine cannot be 0, $B = 0$.
+\begin{align*}
+	&\therefore \Psi = A sin \left(  \frac{2\pi}{\lambda} L \right) = 0 \\
+	&\implies \frac{2\pi L}{\lambda} = n\pi \\
+	&\implies \lambda = \frac{2L}{n} 
+\end{align*}
+\begin{equation}
+	\therefore \Psi_n(x) = Nsin \left(  \frac{n\pi}{L} x \right)
+\end{equation}
+Here, N is the Normalization constant, whose value comes out to be $ \sqrt{ \frac{2}{L}}$, from using equation \ref{eq:norm}
+
+\begin{equation*}
+	E_n = \frac{p^2}{2m} = \frac{ \left( \frac{h}{\lambda}  \right) ^2 }{2m} = \frac{h^2}{2m\lambda^2}  
+\end{equation*}
+Putting $\lambda = \frac{2L}{n}$, 
+
+\begin{equation}
+	E_n = \frac{n^2h^2}{8mL^2} 
+\end{equation}
+Here, $E_n$ is the energy associated with the $n_{th}$ state.\\
+
+Number of nodes ($ \left| \Psi \right|^2 = 0$) is given by $n - 1$
+
+Here, n cannot be zero. Or else, $ \left| \Psi \right|^2 $ would become zero (implying no particle is in the box). Therefore, we define \textit{Zero-Point energy as:} 
+\[
+	E = \frac{h^2}{8mL^2} 
+\]
+\begin{equation}
+	E_{n + 1} - E_n = \frac{(2n + 1) h^2}{8mL^2} 
+\end{equation}
+
+\section{Particle in 2 Dimensional Box}
+\begin{align}
+	&V(x, y) = 0 \;\forall\; 0 \leq x \leq a, \; 0 \leq y \leq b, \; \infty\;otherwise\\
+	&\frac{-\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}  \right) \Psi(x, y) = E\Psi(x, y) \\
+	&\hat{H}(x, y) = \hat{H}(x) + \hat{H}(y)
+\end{align}
+We can use \textbf{separation of variables} method to solve the equation
+
+\begin{equation}
+	\Psi(x, y) = \Psi_{nx} (x) \Psi_{ny}(y)
+\end{equation}
+\begin{equation}
+	\Psi_{nx, ny}(x, y) = \sqrt{\frac{4}{ab}} sin \left( \frac{n_x \pi x}{a}  \right) sin \left( \frac{n_y \pi y}{b}  \right)
+\end{equation}
+
+\begin{equation}
+	E_{nx, ny} = \left( \frac{n_x^2}{a^2} + \frac{n_y^2}{b^2}  \right) \frac{h^2}{8m} 
+\end{equation}
+
+\subsection{Square box degeneracy}
+When $b = a$, 
+\[
+	\Psi_{nx, ny} (x, y) = \frac{2}{a} sin \left( \frac{n_x \pi x}{a} \right) sin \left( \frac{n_y \pi y}{a}  \right)
+\]
+\begin{equation}
+	E_{nx, ny} = (n_x^2 + n_y^2) \frac{h^2}{8ma^2} 
+\end{equation}
+
+\section{Particle in 3 Dimensional box}
+\begin{equation}
+	\hat{H}(x, y, z) \Psi(x, y, z) = E \Psi(x, y, z)
+\end{equation}
+
+\begin{align*}
+	&\hat{H_x}(x) \Psi(x) = E_x \Psi_x(x) \\
+	&\hat{H_y}(y) \Psi(y) = E_y \Psi_y(y) \\
+	&\hat{H_z}(z) \Psi(z) = E_z \Psi_z(z) 
+\end{align*}
+
+\begin{align*}
+	&\hat{H}(x, y, z) = \hat{H_x}(x) + \hat{H_y}(y) + \hat{H_z}(z) \\
+	&E = E_x + E_y + E_z\\
+	&\Psi(x, y, z) = \Psi_x(x)\Psi_y(y)\Psi_z(z)
+\end{align*}
+
+\begin{equation}
+	\Psi_{n_xn_yn_z}(x, y, z) = \sqrt{ \frac{2^3}{abc} } sin \left( \frac{n_x\pi x}{a}  \right) sin \left( \frac{n_y\pi y}{b} \right) sin \left( \frac{n_z\pi z}{c} \right)
+\end{equation}
+
+\begin{equation}
+	E_{n_xn_yn_z} = \frac{h^2}{8m} \left( \frac{n_x^2}{a^2} + \frac{n_y^2}{b^2} + \frac{n_z^2}{c^2} \right) 
+\end{equation}
+
+\section{Vibration: Harmonic Oscillator}
+\begin{equation}
+	E_v = (v + 1/2) h\nu
+\end{equation}
+Here, v is the vibrational quantum number.
+
+\textbf{Vibrational Frequency:} 
+\begin{equation}
+	\nu = \frac{1}{2\pi} \sqrt{\frac{k}{m}}
+\end{equation}
+Here, the energy levels are \textbf{Equally Spaced.} \\
+The zero point energy here is
+\[
+	E = \frac{1}{2} h\nu
+\]
+Number of nodes = $\nu$
+
+\section{Rotational Motion}
+\subsection{Particle on a ring (2D Motion)}
+
+\textbf{Convention:} 
+\begin{align*}
+	Clockwise\;Rotation &\rightarrow m_l > 0 \\
+	Anti-Clockwise\;Rotation &\rightarrow m_l < 0
+\end{align*}
+
+Energy level:
+\begin{equation}
+	E_{m_l} = \frac{m_l^2 \hbar^2}{2mr^2} = \frac{m_l^2 \hbar^2}{2I} 
+\end{equation}
+Here, $I$ is the \textbf{Moment of Inertia}, and $m_l = 0, \pm 1, \pm 2, \dots$.
+
+\subsection{Rotation in 3D - Rigid Rotors}
+Classically, $E = \frac{J^2}{2mr^2} = \frac{J^2}{2I}$
+Here, $J$ is the angular momentum.
+
+\textbf{Convention:} $\theta$ is the angle made in the X-Y plane and $\phi$ is the angle made in the Z-X plane.
+
+\textit{ \textbf{Note:} Here we make use of Polar Coordinates instead of Cartesian coordinates.} 
+
+\begin{align}
+	&E_l = \frac{l(l+1) \hbar^2}{2I}\quad\forall\;l \in \mathbb{N} \\
+	&\therefore J = \hbar \sqrt{l(l + 1)}
+\end{align}
+
+\[
+	m_l \in [-l, l]
+\]
+For a given l,
+\[
+	\textrm{Degeneracy of an energy level} = 2l + 1
+\]
+
+Here, the energy level as well as the angular momentum is quantized.\\
+
+\textbf{Spherical Harmonics} $Y_{l, m_l}(\theta, \phi)$ are obtained this way, which give us information about $l$ and $m_l$.
+
+\begin{equation}
+	J_z = m_l \hbar
+\end{equation}
+Here, $J_z$ is the z-component of the orbital angular momentum.
+
+\section{Hyderogen like Atom}
+Consider an atom with a nuclear charge of $+Ze$ and mass $m_N$, and a single electron of charge $-e$ and mass m. The two interact according to the Coulomb potential:
+\begin{equation}
+	V(r) = - \frac{Ze^2}{4\pi \epsilon_0 r} 
+\end{equation}
+Here, $r$ is the distance between two particles and $\epsilon_0 = 8.854 \times 10^{-12} J^{-1} C^2 m^{-1}$ is the vacuum permittivity.
+
+\subsection{Schr\"odinger's equation}
+\begin{equation}
+\left[	-  \frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}  \right) + V(x, y, z) \right] \Psi(x, y, z) = E \Psi(x, y, z)
+\end{equation}
+
+\begin{equation}
+	\frac{\partial^2}{\partial x^2} + \frac{\partial ^2}{\partial y^2} + \frac{\partial ^2}{\partial z^2} = \nabla^2, \quad where\; \nabla^2 = \textrm{Laplacian Operator}  
+\end{equation}
+\begin{equation}
+	\implies \left[ - \frac{\hbar^2}{2m} \nabla^2 + V(x, y, z)\right] \Psi(x, y, z) = E\Psi(x, y, z)
+\end{equation}
+
+\section{Spherical Polar Coordinates}
+\begin{equation}
+	- \left( \frac{\hbar^2}{2m} \nabla^2 + \frac{Ze^2}{4\pi\epsilon_0 r} \right) \Psi(x, y, z) = E\Psi(x, y, z)
+\end{equation}
+
+\subsection{Hydrogenic Atom Wavefunction}
+\begin{equation}
+	\Psi(r, \theta, \phi) = R(r) \Theta(\theta) \Phi(\phi)
+\end{equation}
+
+\begin{equation}
+	\Psi_{n, l, m_l}(r, \theta, \phi) = R_{n, l}(r)\Theta_{l, m_l}(\theta)\Phi_{m_l}(\phi) = R_{n, l}(r)Y_{, m_l}(\theta, \phi)
+\end{equation}
+
+\begin{equation}
+	\hat{H}\Psi = \hat{E}\Psi
+\end{equation}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
