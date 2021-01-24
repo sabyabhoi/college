@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+
+\pdfpkresolution=600
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Harmonic Oscillations}
+\author{Sabyasachi Bhoi}
+\date{Jan 24, 2021}
+\maketitle
+
+\section{Simple Harmonic Oscillators}
+The general equation for a simple harmonic oscillator is of the form
+
+\begin{equation*}
+	\ddot{x} + \omega_0^2x = 0
+\end{equation*}
+Here, $\omega_0 = \sqrt{ \frac{k}{m} }$
+
+\section{Damped Harmonic Oscillators}
+
+The general equation for a damped harmonic oscillator is of the form
+
+\begin{equation*}
+	\ddot{x} + \gamma \dot{x} + \omega_0 x = 0
+\end{equation*}
+Here, $\gamma = \frac{b}{m}$ and $\omega = \sqrt{\frac{k}{m}}$.
+
+We assume the general solution for this to be of the form
+\begin{equation*}
+	x = X(T) e^{\alpha t}
+\end{equation*}
+Here, $X(T)$ \textbf{cannot} be an exponential function.  
+From this, we get the following equation
+
+\begin{equation*}
+	\ddot{X}(T) + \dot{X}(T) (2\alpha + \gamma) + X(T) (\alpha^2 - \alpha\gamma + \omega_0^2) = 0
+\end{equation*}
+
+After finding the eigenvalues for the equation $Dx = \lambda x$, we get
+\begin{equation*}
+	\lambda = \frac{-\gamma}{2} \pm \frac{\sqrt{\gamma^2 - 4\omega_0^2}}{2}
+\end{equation*}
+
+This gives rise to three different cases:
+\subsection{ $\gamma^2 - 4 \omega_0^2 = 0$ }
+This is the condition for \textbf{Critical Damping}.
+Here, $\lambda = - \frac{\gamma}{2}$
+
+\begin{equation*}
+	x = (A + Bt) e^{-\gamma t}
+\end{equation*}
+
+\subsection{ $\gamma^2 -4\omega_0^2 > 0$ }
+This is the condition for \textbf{Over damping} 
+Here, $\lambda_1 = - \frac{\gamma}{2} - \frac{\gamma}{2} \sqrt{1 - \frac{4 \omega_0^2}{\gamma^2}} $ and $\lambda_2 = - \frac{\gamma}{2} + \frac{\gamma}{2} \sqrt{1 - \frac{4 \omega_0^2}{\gamma^2}} $
+
+\begin{equation*}
+	x = A e^{\lambda_1 t} + B e^{\lambda_2 t}
+\end{equation*}
+
+\subsection{ $\lambda^2 - 4\omega_0^2 < 0$ }
+This is the case for \textbf{light damping}. This is the only case where the particle shows some form of oscillations. \\
+
+Let $\omega_1 = \sqrt{ \frac{\lambda^2}{4} - \omega_0^2 } $
+
+\begin{equation*}
+	\therefore \lambda = \frac{-\gamma}{2} \pm i \omega_1
+\end{equation*}
+
+\begin{align*}
+	\implies x &=  e^{- \frac{\gamma t}{2}} \left( A e^{i\omega_1} + B e^{i\omega_2} \right) \\
+	\implies x &=  A e^{- \frac{\gamma t}{2}} cos \left( \omega_1 t + \phi \right)
+\end{align*}
+
+\subsubsection{Energy for lightly damped case}
+\begin{equation*}
+	E = E_0 e^{-\gamma t}
+\end{equation*}
+
+\section{Forced Oscillators}
+
+\subsection{Undamped case}
+\begin{align*}
+	F(t) &=  F_0 cos\omega t \\
+	m\ddot{x} + kx &=  F_0 cos\omega t \\
+\end{align*}
+\begin{equation}
+	\label{eqn:FHM}
+	\implies \ddot{x} + \omega_0^2x = \frac{F_0}{m} cos \omega t
+\end{equation}
+
+Here, we have to take into account two different frequencies:
+$\omega_0$(natural frequency) and $\omega$(forced frequency).
+
+Let the solution to this differential equation be $x = A cos {\omega t}$
+
+\begin{equation*}
+	\therefore \ddot{x} = -A \omega^2 cos \omega t
+\end{equation*}
+Putting this in equation \ref{eqn:FHM}, we get
+\begin{equation*}
+	A = \frac{F_0}{m \left( \omega_0^2 - \omega^2 \right)}
+\end{equation*}
+
+\begin{equation*}
+	\therefore x_p = \frac{F_0}{m} \frac{1}{ \left( \omega_0^2 - \omega^2 \right) } cos \omega t
+\end{equation*}
+This is a \textbf{particular solution} to the equation.
+
+\begin{equation*}
+	x_h = B cos \left( \omega_0 t + \phi \right)
+\end{equation*}
+This is the equation for an undamped, natural oscillation. \\ \\
+Therefore, the general equation for a \textbf{undamped forced oscillator} is
+\begin{align*}
+	\implies x &=  x_p + x_h \\
+	x &=  \frac{F_0}{m} \frac{1}{ \left( \omega_0^2 - \omega^2 \right) } cos \omega t + B cos \left( \omega_0 t + \phi \right)
+\end{align*}
+
+\subsection{Damped case}
+
+\begin{equation*}
+	\ddot{x} + \gamma \dot{x} + \omega_0^2 x = \frac{F_0}{m} cos \omega t = f cos \omega t
+\end{equation*}
+
+To solve this, let's consider a \textit{companion equation} of the form
+\begin{equation*}
+	\ddot{y} + \gamma \dot{y} + \omega_0^2 y = \frac{F_0}{m} sin \omega t = f sin \omega t
+\end{equation*}
+
+Let $z(t) = x(t) + i y(t)$.
+
+\begin{equation*}
+	\therefore \ddot{z} + \gamma \dot{z} + \omega_0^2 z = f e^{i\omega t}
+\end{equation*}
+
+On assuming the solution for this differential equation to be $z = z_0 e^{i\omega t}$, We get 
+\begin{equation*}
+	A = \frac{F_0}{m} \frac{1}{\sqrt{ \left( \omega_0^2 - \omega^2 \right)^2 + \gamma^2\omega^2 }},
+\end{equation*}
+\begin{equation*}
+	\phi = tan^{-1} \left( \frac{\gamma\omega}{\omega^2 - \omega_0^2} \right)
+\end{equation*}
+
+The particular solution is
+\begin{equation*}
+	z = z_0 e^{i\omega t} = A e^{i\phi} e^{i\omega t}
+\end{equation*}
+
+The real part for this is
+\begin{equation*}
+	x_p(t) = A cos \left( \omega t + \phi \right)
+\end{equation*}
+
+Solution for a naturally damped oscillation is:
+\begin{equation*}
+	x_h(t) = C_1 e^{\alpha_1 t} + C_2 e^{\alpha_2 t}
+\end{equation*}
+
+Therefore, the solution for a \textbf{Damped Forced Oscillator} is:
+\begin{equation*}
+	x(t) = A cos \left( \omega t + \phi \right) + C_1 e^{\alpha_1 t} + C_2 e^{\alpha_2 t}
+\end{equation*}
+
+\end{document}
